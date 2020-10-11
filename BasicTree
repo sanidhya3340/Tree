@@ -1,0 +1,29 @@
+//simple  tree implementation
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct node snode;
+struct node
+{
+    int data;
+    snode *right;
+    snode *left;
+
+};
+snode* newnode(int data)
+{
+    snode* node=(snode*)malloc(sizeof(snode));
+    node->data=data;
+    node->right=NULL;
+    node->left=NULL;
+    return node;
+}
+int main()
+{
+    snode *root=newnode(1);
+    root->right= newnode(2);
+    root->left= newnode(3);
+    root->left->left= newnode(4);
+    root->right->right= newnode(5);
+    printf("%d",root->data);
+    return 0;
+}
